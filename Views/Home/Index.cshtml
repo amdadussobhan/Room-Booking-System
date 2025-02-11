@@ -3,5 +3,28 @@
 }
 
 <div>
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="">Booking List</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>User</th>
+                <th>Room</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var user in ViewBag.bookings)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.User.Name</td>
+                <td>@user.Room.Name</td>
+                <td>@user.StartTime</td>
+                <td>@user.EndTime</td>
+            </tr>
+        }
+        </tbody>
+    </table>
 </div>
